@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.zip
+心灵图景/
+mindscape/
