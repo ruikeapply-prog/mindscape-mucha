@@ -18,7 +18,7 @@ function App() {
   }, [checkDailyLogin]);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/mindscape-mucha">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/visitor" element={<VisitorPage />} />
