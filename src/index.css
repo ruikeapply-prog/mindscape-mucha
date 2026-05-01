@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/* ===== Mucha Style Design System ===== */
+:root {
+  --mucha-cream: #FBF8F0;
+  --mucha-parchment: #F0E8D8;
+  --mucha-sage: #7B8E6B;
+  --mucha-sage-light: #A8BCA0;
+  --mucha-gold: #C4A265;
+  --mucha-gold-light: #D4C09A;
+  --mucha-rose: #C4917B;
+  --mucha-rose-light: #D4B0A0;
+  --mucha-teal: #7B9E9E;
+  --mucha-teal-light: #A0C0C0;
+  --mucha-lavender: #9B8EB8;
+  --mucha-brown: #3D3226;
+  --mucha-brown-medium: #6B5E4F;
+  --mucha-brown-light: #8B7E6F;
+  --mucha-border: #D4C5A9;
+  --mucha-border-light: #E8DFC8;
+}
+
+/* Scrollbar */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+.line-clamp-1 { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Mucha Ornamental Border */
+.mucha-border {
+  border: 2px solid var(--mucha-border);
+  position: relative;
+}
+.mucha-border::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid var(--mucha-border-light);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Mucha Card */
+.mucha-card {
+  background: var(--mucha-cream);
+  border: 1.5px solid var(--mucha-border);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.mucha-card:hover {
+  border-color: var(--mucha-gold);
+  box-shadow: 0 4px 24px rgba(196, 162, 101, 0.15);
+}
+
+/* Mucha Section Divider */
+.mucha-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--mucha-border), var(--mucha-gold-light), var(--mucha-border), transparent);
+}
+
+/* Mucha Button */
+.mucha-btn {
+  background: linear-gradient(135deg, var(--mucha-sage), var(--mucha-teal));
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 28px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.mucha-btn:hover {
+  box-shadow: 0 4px 16px rgba(123, 142, 107, 0.3);
+  transform: translateY(-1px);
+}
+.mucha-btn-gold {
+  background: linear-gradient(135deg, var(--mucha-gold), var(--mucha-rose));
+}
+.mucha-btn-gold:hover {
+  box-shadow: 0 4px 16px rgba(196, 162, 101, 0.3);
+}
+.mucha-btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--mucha-border);
+  color: var(--mucha-brown-medium);
+}
+.mucha-btn-outline:hover {
+  border-color: var(--mucha-gold);
+  background: var(--mucha-parchment);
+}
+
+/* Mucha Header */
+.mucha-header {
+  background: rgba(251, 248, 240, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--mucha-border-light);
+}
+
+/* Mucha Input */
+.mucha-input {
+  background: white;
+  border: 1.5px solid var(--mucha-border);
+  border-radius: 12px;
+  color: var(--mucha-brown);
+  transition: border-color 0.3s;
+}
+.mucha-input::placeholder { color: var(--mucha-brown-light); opacity: 0.6; }
+.mucha-input:focus { outline: none; border-color: var(--mucha-gold); }
+
+/* Mucha Tag */
+.mucha-tag {
+  background: var(--mucha-parchment);
+  border: 1px solid var(--mucha-border-light);
+  color: var(--mucha-brown-medium);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 0.8rem;
+}
+.mucha-tag-active {
+  background: var(--mucha-sage);
+  border-color: var(--mucha-sage);
+  color: white;
+}
+
+/* Mucha decorative corners */
+.mucha-corner::before,
+.mucha-corner::after {
+  content: '❧';
+  position: absolute;
+  color: var(--mucha-gold-light);
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+.mucha-corner::before { top: 8px; left: 12px; }
+.mucha-corner::after { bottom: 8px; right: 12px; transform: rotate(180deg); }
+
+/* Body */
+body {
+  font-family: 'Georgia', 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--mucha-cream);
+  color: var(--mucha-brown);
+}
+
+::selection {
+  background-color: rgba(123, 142, 107, 0.25);
+  color: var(--mucha-brown);
+}
+
+/* Mucha ornament pattern */
+.mucha-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(196, 162, 101, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(123, 142, 107, 0.06) 0%, transparent 50%);
+}
